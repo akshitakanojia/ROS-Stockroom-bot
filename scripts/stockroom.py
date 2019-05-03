@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+import os
+import sys
+
+if __name__ == "__main__":
+	args_list = sys.argv
+	if len(args_list) != 2:
+		print("Usage: stockroom.py BIN_NUMBER")
+		sys.exit(1)
+	bin_no = int(sys.argv[1])
+	print("\n\n======\nDroping Item in Stockroom Bot\n=====")
+	os.system("./stock_products.py")
+
+	print("\n\n======\nGoing to bin\n======")
+	os.system("./go_to_bin.py %d" % bin_no)
+
+	print("\n\n======\nPicking up Item \n======")
+	os.system("./pick_up_item.py %d" % bin_no) 
+
+	print("\n\n======\nGoing to Counter \n======")
+	os.system("./deliver_to_counter.py")
+
+
+

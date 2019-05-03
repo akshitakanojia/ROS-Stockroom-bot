@@ -1,0 +1,10 @@
+<launch>
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<arg name="world_name" value="$(find stockroom_bot)/worlds/aisle.world"/>
+	</include>
+	<include file="$(find fetch_gazebo)/launch/include/fetch.launch.xml"/>
+	<param name="use_gui" type="bool" value="true" />
+	<include file="$(find stockroom_bot)/launch/nav.launch"/>
+	<include file="$(find stockroom_bot)/launch/moveit.launch"/>
+	<include file="$(find stockroom_bot)/launch/markers.launch"/>
+</launch>
